@@ -4,9 +4,9 @@
   "description": "",
   "private": true,
   "scripts": {
-    "start": "npx webpack-dev-server --config scripts/webpack.dev.js",
-    "prod": "npx webpack --config scripts/webpack.prod.js",
-    "clean": "rimraf dist"
+    "start": "node webpack/dev-server",
+    "prod": "npx webpack --config webpack/webpack.prod.js",
+    "clean": "rimraf build"
   },
   "author": "",
   "license": "ISC",
