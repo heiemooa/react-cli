@@ -4,9 +4,9 @@ const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin'); /
 const AutoPreFixer = require('autoprefixer'); ////给 CSS3 的属性添加前缀，防止 CSS 样式冲突,结合 postcss-loader
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin'); //js压缩
 const { CleanWebpackPlugin } = require('clean-webpack-plugin'); //清空文件夹
-
 const merge = require('webpack-merge');
 const common = require('./webpack.common');
+const paths = require('./paths');
 
 const cssFilename = 'static/css/[name].[contenthash:8].css';
 
@@ -16,7 +16,7 @@ const prodWebpackConfig = {
   mode: 'production',
   output: {
     filename: 'static/js/[name].[chunkhash:8].js',
-    path: path.resolve(__dirname, '../dist')
+    path: paths.appBuild
   },
   module: {
     rules: [

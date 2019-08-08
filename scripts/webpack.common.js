@@ -1,14 +1,16 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const utils = require('./utils');
+const paths = require('./paths');
 
 module.exports = {
   entry: {
-    main: './src/index.js',
+    main: paths.appIndexJs,
   },
   resolve: {
     extensions: ['.web.js', '.vue', '.mjs', '.js', '.json', '.web.jsx', '.jsx'], //引入的时候，可以忽略文件后缀名
     alias: {
-      '@': path.resolve(__dirname, 'src'),
+      '@': utils.resolve('src'),
     }
   },
   externals: { //从输出的 bundle 中排除依赖，
@@ -57,30 +59,30 @@ module.exports = {
       },
       {
         test: /\.(js|jsx)$/,
-        include: path.resolve(__dirname, 'src'), //加快编译速度,只编译src目录
+        include: paths.appSrc, //加快编译速度,只编译src目录
         use: [
           {
-            loader: 'babel-loader',
+            loader: require.resolve('babel-loader'),
             options: {
               cacheDirectory: true, //指定的目录将用来缓存 loader 的执行结果,之后的 webpack 构建，将会尝试读取缓存，来避免在每次执行时，可能产生的、高性能消耗的 Babel 重新编译过程(recompilation process)
             }
           },
-          {
-            loader: 'eslint-loader',
-            options: {
-              // eslint options (if necessary)
-              // fix: true
-            }
-          }
+          // {
+          //   loader: 'eslint-loader',
+          //   options: {
+          //     // eslint options (if necessary)
+          //     // fix: true
+          //   }
+          // }
         ]
       },
     ]
   },
   plugins: [
     new HtmlWebpackPlugin({
-      title: 'AICODER 全栈线下实习', // 默认值：Webpack App
+      title: 'webpack4', // 默认值：Webpack App
       // filename: 'index.html', // 默认值： 'index.html'
-      template: path.resolve(__dirname, './src/index.html'),
+      template: paths.appHtml,
       minify: {
         collapseWhitespace: true, //清理html中的空格、换行符。（默认值false）
         removeComments: true, //清理html中的注释（默认值false）

@@ -3,6 +3,7 @@ const AutoPreFixer = require('autoprefixer'); ////给 CSS3 的属性添加前缀
 const webpack = require('webpack');
 const merge = require('webpack-merge');
 const common = require('./webpack.common');
+const paths = require('./paths');
 
 const devWebpackConfig = {
   mode: 'development',
@@ -14,7 +15,7 @@ const devWebpackConfig = {
   devServer: {
     clientLogLevel: 'none', // 可能的值有 none, error, warning 或者 info（默认值)
     hot: true,  // 启用 webpack 的模块热替换特性, 这个需要配合： webpack.HotModuleReplacementPlugin插件
-    contentBase: path.resolve(__dirname, 'src'), // 告诉服务器从哪里提供内容， 默认情况下，将使用当前工作目录作为提供内容的目录
+    contentBase: paths.appSrc, // 告诉服务器从哪里提供内容， 默认情况下，将使用当前工作目录作为提供内容的目录
     compress: true, // 一切服务都启用gzip 压缩
     host: '0.0.0.0', // 指定使用一个 host。默认是 localhost。如果你希望服务器外部可访问 0.0.0.0
     port: 8080, // 端口
