@@ -10,6 +10,7 @@ const paths = require('./paths')
 
 const cssFilename = 'static/css/[name].[contenthash:8].css'
 const extractTextPluginOptions = { publicPath: Array(cssFilename.split('/').length).join('../') }
+console.log('\x1b[36m%s\x1b[0m', 'Creating an optimized production build...')
 
 const prodWebpackConfig = {
   mode: 'production',
@@ -73,8 +74,8 @@ const prodWebpackConfig = {
       cacheGroups: {
         commons: {
           test: /[\\/]node_modules[\\/]/,
-          name: "vendor1",
-          chunks: "all"
+          name: 'vendor1',
+          chunks: 'all'
         }
       }
     }

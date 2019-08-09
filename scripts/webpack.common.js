@@ -3,6 +3,12 @@ const utils = require('./utils');
 const paths = require('./paths');
 
 module.exports = {
+  stats: {
+    modules: false,
+    children: false,
+    chunks: false,
+    chunkModules: false
+  },
   resolve: {
     extensions: ['.web.js', '.vue', '.mjs', '.js', '.json', '.web.jsx', '.jsx'], //引入的时候，可以忽略文件后缀名
     alias: {

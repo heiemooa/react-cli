@@ -4,8 +4,9 @@
   "description": "",
   "private": true,
   "scripts": {
-    "start": "node webpack/dev-server",
-    "prod": "npx webpack --config webpack/webpack.prod.js",
+    "start": "node scripts/dev-server",
+    "build": "node scripts/build",
+    "prod": "npx webpack --progress --config scripts/webpack.prod.js",
     "clean": "rimraf build"
   },
   "author": "",
