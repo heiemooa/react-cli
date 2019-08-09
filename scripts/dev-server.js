@@ -8,6 +8,8 @@ const paths = require('./paths')
 
 const DEFAULT_PORT = parseInt(process.env.PORT, 10) || 8080
 const HOST = process.env.HOST || '0.0.0.0'
+const proxyPackageJson = require(paths.appPackageJson) //package.json中的proxy，如果定义了则用package.json中的proxy
+const proxyCommonConfig = require('../src/common/config') //package.json中的proxy，如果定义了则用package.json中的proxy
 
 const server = new WebpackDevServer(compiler, {
   clientLogLevel: 'none', // 可能的值有 none, error, warning 或者 info（默认值)
@@ -31,12 +33,7 @@ const server = new WebpackDevServer(compiler, {
     ignored: /node_modules/, // 忽略监控的文件夹，正则
     aggregateTimeout: 300 // 默认值，当第一个文件更改，会在重新构建前增加延迟
   },
-  proxy: {  // 设置代理
-    '/api': {  // 访问api开头的请求，会跳转到  下面的target配置
-      target: 'http://192.168.0.102:8080',
-      pathRewrite: { '^/api': '/mockjsdata/5/api' }
-    }
-  }
+  proxy: proxyCommonConfig.PROXY || proxyPackageJson.proxy
 })
 server.listen(DEFAULT_PORT, HOST, function (err) {
   if (err) throw err

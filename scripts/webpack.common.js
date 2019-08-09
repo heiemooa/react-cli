@@ -1,6 +1,7 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const utils = require('./utils');
 const paths = require('./paths');
+const config = require('../src/common/config');
 
 module.exports = {
   stats: {
@@ -82,7 +83,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      title: 'webpack4', // 默认值：Webpack App
+      title: config.PROJECT_NAME, // 默认值：Webpack App
       // filename: 'index.html', // 默认值： 'index.html'
       template: paths.appHtml,
       minify: {
