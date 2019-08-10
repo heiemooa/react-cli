@@ -71,13 +71,13 @@ module.exports = {
               cacheDirectory: true, //指定的目录将用来缓存 loader 的执行结果,之后的 webpack 构建，将会尝试读取缓存，来避免在每次执行时，可能产生的、高性能消耗的 Babel 重新编译过程(recompilation process)
             }
           },
-          // {
-          //   loader: 'eslint-loader',
-          //   options: {
-          //     // eslint options (if necessary)
-          //     // fix: true
-          //   }
-          // }
+          {
+            loader: 'eslint-loader',
+            options: {
+              // eslint options (if necessary)
+              fix: true
+            }
+          }
         ]
       },
     ]

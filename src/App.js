@@ -8,7 +8,7 @@ class App extends React.Component {
       <div>
         返回发顺大啊是
       </div>
-    )
+    );
   }
 }
 

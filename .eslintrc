@@ -1,0 +1,31 @@
+{
+  "root": true,
+  "parserOptions": {
+    "parser": "babel-eslint",
+    "ecmaVersion": 6,
+    "ecmaFeatures": {
+      "jsx": true,
+      "modules": true
+    },
+    "sourceType": "module"
+  },
+  "env": {
+    "browser": true,
+    "node": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended"
+  ],
+  "plugins": ["react"],
+  "rules": {
+    "semi": [1, "always"], //句末封号
+    "quotes": [1, "single", { "avoidEscape": true }], //单引号
+    "no-unused-vars": [1,
+      {
+        "vars": "all", // 变量定义必须被使用
+        "args": "none" // 对于函数形参不检测
+      }
+    ]
+  }
+}
