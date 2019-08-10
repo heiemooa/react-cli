@@ -1,13 +1,15 @@
-import React from 'react'
+import { hot } from 'react-hot-loader/root';
+import React from 'react';
 
-export default class App extends React.Component {
-
+class App extends React.Component {
 
   render () {
     return (
       <div>
-        fghh
+        返回发顺大啊是
       </div>
     )
   }
 }
+
+export default hot(App);

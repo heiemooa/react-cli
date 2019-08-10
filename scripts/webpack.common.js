@@ -14,6 +14,7 @@ module.exports = {
     extensions: ['.web.js', '.vue', '.mjs', '.js', '.json', '.web.jsx', '.jsx'], //引入的时候，可以忽略文件后缀名
     alias: {
       '@': utils.resolve('src'),
+      'react-dom': '@hot-loader/react-dom'
     }
   },
   externals: { //从输出的 bundle 中排除依赖，
