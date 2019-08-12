@@ -18,6 +18,14 @@
     "plugin:react/recommended"
   ],
   "plugins": ["react"],
+  "settings": {
+    "react": {
+      "createClass": "createReactClass",
+      "pragma": "React",
+      "version": "detect",
+      "flowVersion": "0.53"
+    }
+  },
   "rules": {
     "semi": [1, "always"], //句末封号
     "quotes": [1, "single", { "avoidEscape": true }], //单引号
