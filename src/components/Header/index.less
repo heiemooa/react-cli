@@ -1,0 +1,80 @@
+/**
+ * Created by huangfushan on 2019-08-13 14:43
+ */
+@import "../../themes/default/variables";
+
+.header-menu {
+  height: 4.25rem;
+  background: rgba(0, 0, 0, .8);
+  line-height: 4.25rem;
+  font-size: .875rem;
+  color: @text-color-secondary-light;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 100;
+
+  &-logo {
+    width: 200px;
+    text-align: center;
+    padding: 0 1rem;
+
+    img {
+      height: 2.75rem;
+      margin: .5rem;
+    }
+  }
+
+  &-left {
+    flex: 1;
+    font-size: 1rem;
+    display: flex;
+
+    a {
+      padding: 0 1rem;
+      display: block;
+      color: @text-color-secondary-light;
+    }
+
+    a:hover {
+      color: @text-color-light;
+      background: rgba(0, 0, 0, .5);
+    }
+
+    a.active {
+      color: @text-color-light;
+      background: rgba(0, 0, 0, .5);
+    }
+  }
+
+  &-right {
+    text-align: right;
+    padding: 0 1rem;
+    display: flex;
+
+    a {
+      padding: 0 1rem;
+      color: @text-color-secondary-light;
+    }
+
+    a:hover {
+      color: @text-color-light;
+      background: rgba(0, 0, 0, .5);
+    }
+
+    a.active {
+      color: @text-color-light;
+      background: rgba(0, 0, 0, .5);
+    }
+
+    .account {
+      padding: 0 1rem;
+      cursor: pointer;
+
+      span{
+        margin-right: 1rem;
+      }
+    }
+  }
+}

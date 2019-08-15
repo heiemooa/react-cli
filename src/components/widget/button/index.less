@@ -1,0 +1,34 @@
+/**
+ * @Author: huangfushan
+ * @Date: 2019-03-15 09:36
+ * @Project: web-manager-admin
+ */
+@import '../../../themes/default/variables';
+
+.hfs-button {
+  line-height: 2.25rem;
+  position: relative;
+  display: inline-block;
+  color: @text-color-light;
+  height: 2.25rem;
+  padding: 0 1rem;
+  background: @primary-color;
+  border: @border;
+  border-radius: @border-radius-base;
+  box-sizing: border-box;
+  cursor: pointer;
+  font-size: .875rem;
+  -webkit-transition: color 0.3s, background 0.3s, border-color 0.3s;
+  -o-transition: color 0.3s, background 0.3s, border-color 0.3s;
+  transition: color 0.3s, background 0.3s, border-color 0.3s;
+
+  &:hover {
+    background-color: darken(@primary-color, -10%);
+    border: @border;
+  }
+
+  &:active {
+    background-color: darken(@primary-color, -20%);
+    border: @border;
+  }
+}

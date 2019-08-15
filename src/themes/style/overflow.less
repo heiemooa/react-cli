@@ -1,0 +1,26 @@
+.overflow(@number) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
+  word-break: break-all;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: @number
+}
+
+.overflow-1 {
+  .overflow(1)
+}
+
+.overflow-2 {
+  .overflow(2)
+}
+
+.overflow-3 {
+  .overflow(3)
+}
+
+.overflow-4 {
+  .overflow(4)
+}
+

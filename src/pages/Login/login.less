@@ -1,0 +1,70 @@
+/**
+ * Created by huangfushan on 2019-08-12 18:12
+ */
+@import "../../themes/default/variables";
+
+.page-login {
+
+  &-bg {
+    background: #2d333e;
+    color: #fff;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    display: flex;
+    letter-spacing: @space-middle;
+    position: relative;
+    height: 25rem;
+    text-align: center;
+
+    &-logo {
+      margin-top: 15rem;
+      font-size: 4rem;
+    }
+  }
+
+  &-form {
+    margin: auto;
+    padding: 1rem;
+    width: 20rem;
+
+    &-row {
+      margin-top: 1rem;
+      width: 100%;
+
+      .title {
+        width: 4rem;
+        color: @text-color;
+        font-size: 1rem;
+        margin: 0;
+      }
+
+      input {
+        flex: 1;
+        border: 0;
+        background: @background-color-base;
+        height: 2rem;
+        padding: 0 .5rem;
+      }
+
+      #remember {
+        margin-left: 4rem;
+        margin-right: .5rem;
+      }
+
+      .btn-login {
+        width: 100%;
+      }
+
+      .go-register {
+        color: @text-color;
+      }
+    }
+  }
+
+  &-notice {
+    position: absolute;
+    font-size: .75rem;
+    margin-left: 4rem;
+  }
+}

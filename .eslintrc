@@ -1,17 +1,19 @@
 {
-  "root": true,
+  "parser": "babel-eslint",
   "parserOptions": {
-    "parser": "babel-eslint",
     "ecmaVersion": 6,
     "ecmaFeatures": {
       "jsx": true,
-      "modules": true
+      "modules": true,
+      "legacyDecorators": true
     },
+    "experimentalObjectRestSpread": true, //结构赋值
     "sourceType": "module"
   },
   "env": {
     "browser": true,
-    "node": true
+    "node": true,
+    "es6": true
   },
   "extends": [
     "eslint:recommended",
@@ -28,7 +30,9 @@
   },
   "rules": {
     "semi": [1, "always"], //句末封号
-    "quotes": [1, "single", { "avoidEscape": true }], //单引号
+    "quotes": [1, "single", {  "allowTemplateLiterals": true }], //单引号
+    "react/no-unescaped-entities": [2, { "forbid": [">", "}"] }],
+    "react/display-name": [0],
     "no-unused-vars": [1,
       {
         "vars": "all", // 变量定义必须被使用

@@ -1,0 +1,82 @@
+// color
+@white                      : #fff; // 白色
+@green                      : #52c41a; //绿色
+@red                        : #f5222d; //红色
+@blue                       : #1890ff; //蓝色
+@yellow                     : #eca42b; //黄色
+@gray                       : #b2b2b2; //灰色色
+@orange                     : #faad14; // 橙色
+@white                      : #fff;
+@black                      : #000;
+
+@primary-color              : @blue;
+@success-color              : @green;
+@error-color                : @red;
+@warn-color                 : @orange;
+@info-color                 : @primary-color; //普通的消息提示
+@highlight-color            : @red; //高亮，比如注意事项等重要的通知
+
+//背景颜色
+@background-color           : #fff; // 默认背景白色  用来重置antd的默认样式
+@background-color-base      : #f2f2f2; // 灰白背景的颜色 接近白色
+@background-color-content   : #e7ebee; // 灰白背景的颜色 更加灰
+@background-color-hover     : rgba(90, 141, 239, 0.2); // 元素hover的背景颜色
+@background-color-active    : rgba(90, 141, 239, 0.2); // 元素active的背景颜色
+
+// font
+@font-size-base             : 14px;
+@font-size-hg               : @font-size-base + 4px; //18px
+@font-size-lg               : @font-size-base + 2px; //16px
+@font-size-sm               : @font-size-base - 2px; //12px
+@font-family                : "lucida grande", "lucida sans unicode", lucida, helvetica, "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+@code-family                : 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+
+// font-weight
+@font-weight-base           : normal;
+@font-weight-weight         : 500;
+
+// text-color
+@heading-color              : fade(@black, 85%);
+@text-color                 : fade(@black, 65%);
+@text-color-secondary       : fade(@black, 45%);
+@text-color-light           : fade(@white, 100%);
+@text-color-secondary-light : fade(@white, 80%);
+
+// 全局常用行高的定义
+@line-height-base           : 1.5;
+@line-height-lg             : 36px;
+@line-height-hg             : 40px;
+
+// 全局所有的padding或者margin的常用间隔
+@space-mm                   : 2px;
+@space-sm                   : 4px;
+@space-base                 : 8px;
+@space-middle               : 10px;
+@space-normal               : 16px;
+@space-lg                   : 20px;
+@space-hg                   : 32px;
+
+// line
+@link-color: @primary-color;
+@link-hover-color: fade(@primary-color, 95%);
+@link-active-color: fade(@primary-color, 95%);
+@link-decoration: none;
+@link-hover-decoration: none;
+
+
+
+// border-radius
+@border-radius-base         : 4px;
+@border-radius-sm           : 2px;
+
+// border
+@border-color-split: #dfe4ea; // 常见淡蓝色边框颜色的定义
+@border-color-base          : hsv(0, 0, 85%);
+@border                     : 1px solid @border-color-base;
+@box-shadow-base            : 0 1px @space-middle rgba(0, 0, 0, .1);
+
+
+@screen-xs                  : 576px;
+@screen-sm                  : 768px;
+@screen-md                  : 992px;
+@screen-lg                  : 1280px;

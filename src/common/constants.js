@@ -11,7 +11,7 @@ export const C_SESSION = 'session'; //session
 export const C_AUTHOR = {
   TIME: '2019',
   NAME: 'huangfushan',
-  PATH: 'https://www.huangfushan.com'
+  PATH: 'https://github.com/huangfushan/react-cli'
 };
 
 /**
@@ -19,7 +19,7 @@ export const C_AUTHOR = {
  * @type {{HOST: string, PATH: string}}
  */
 export const C_API = {
-  HOST_PATH: `${path.debug()}${path.PROJECT_CODE}/api`, // 基本请求路径"/debug/code/api/具体接口"，线上debug是空，
+  HOST_PATH: `${path.debug()}/${path.PROJECT_CODE}/api`, // 基本请求路径"/debug/code/api/具体接口"，线上debug是空，
   TIMEOUT: 15000, //api请求超时时间
 };
 

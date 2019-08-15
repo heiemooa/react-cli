@@ -1,15 +1,15 @@
-'use strict'
+'use strict';
 
-const WebpackDevServer = require('webpack-dev-server')
-const config = require('./webpack.dev')
-const webpack = require('webpack')
-const compiler = webpack(config)
-const paths = require('./paths')
+const WebpackDevServer = require('webpack-dev-server');
+const config = require('./webpack.dev');
+const webpack = require('webpack');
+const compiler = webpack(config);
+const paths = require('./paths');
 
-const DEFAULT_PORT = parseInt(process.env.PORT, 10) || 8080
-const HOST = process.env.HOST || '0.0.0.0'
-const proxyPackageJson = require(paths.appPackageJson) //package.json中的proxy，如果定义了则用package.json中的proxy
-const proxyCommonConfig = require('../src/common/config') //package.json中的proxy，如果定义了则用package.json中的proxy
+const DEFAULT_PORT = parseInt(process.env.PORT, 10) || 8080;
+const HOST = process.env.HOST || '0.0.0.0';
+const proxyPackageJson = require(paths.appPackageJson); //package.json中的proxy，如果定义了则用package.json中的proxy
+const proxyCommonConfig = require('../src/common/config'); //package.json中的proxy，如果定义了则用package.json中的proxy
 
 const server = new WebpackDevServer(compiler, {
   clientLogLevel: 'none', // 可能的值有 none, error, warning 或者 info（默认值)
@@ -34,8 +34,8 @@ const server = new WebpackDevServer(compiler, {
     aggregateTimeout: 300 // 默认值，当第一个文件更改，会在重新构建前增加延迟
   },
   proxy: proxyCommonConfig.PROXY || proxyPackageJson.proxy
-})
+});
 server.listen(DEFAULT_PORT, HOST, function (err) {
-  if (err) throw err
-  console.log('\x1b[36m%s\x1b[0m', 'Starting the development server...\n')
-})
+  if (err) throw err;
+  console.log('\x1b[36m%s\x1b[0m', 'Starting the development server...\n');
+});

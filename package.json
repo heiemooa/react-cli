@@ -1,18 +1,35 @@
 {
-  "name": "webpack-demo",
-  "version": "1.0.0",
-  "description": "",
+  "name": "webpack-cli",
+  "version": "0.0.1",
+  "description": "A React scaffolding based on webpack4, babel7",
+  "keywords": [
+    "react",
+    "react-router-dom",
+    "webpack",
+    "redux",
+    "less",
+    "axios",
+    "babel",
+    "socket.io"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/huangfushan/react-cli"
+  },
   "private": true,
   "scripts": {
-    "start": "node scripts/dev-server",
-    "build": "node scripts/build",
+    "start": "node scripts/dev.server",
+    "socket": "node scripts/socket.server",
     "prod": "npx webpack --progress --config scripts/webpack.prod.js",
+    "build": "node scripts/build",
     "clean": "rimraf build"
   },
-  "author": "",
+  "author": "huangfushan",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.5.5",
+    "@babel/plugin-proposal-class-properties": "^7.5.5",
+    "@babel/plugin-proposal-decorators": "^7.4.4",
     "@babel/plugin-transform-runtime": "^7.5.5",
     "@babel/preset-env": "^7.5.5",
     "@babel/preset-react": "^7.0.0",
@@ -33,6 +50,8 @@
     "optimize-css-assets-webpack-plugin": "^5.0.3",
     "postcss-loader": "^3.0.0",
     "react-hot-loader": "^4.12.10",
+    "redux-logger": "^3.0.6",
+    "socket.io": "^2.2.0",
     "style-loader": "^0.23.1",
     "uglifyjs-webpack-plugin": "^1.2.7",
     "url-loader": "^2.1.0",
@@ -44,6 +63,16 @@
   "dependencies": {
     "@babel/runtime": "^7.5.5",
     "@hot-loader/react-dom": "^16.8.6",
-    "react": "^16.8.6"
+    "axios": "^0.19.0",
+    "md5": "^2.2.1",
+    "prop-types": "^15.7.2",
+    "rc-tween-one": "^2.5.0",
+    "react": "^16.8.6",
+    "react-loadable": "^5.5.0",
+    "react-redux": "^7.1.0",
+    "react-router-dom": "^5.0.1",
+    "redux": "^4.0.4",
+    "redux-actions": "^2.6.5",
+    "redux-thunk": "^2.3.0"
   }
 }
