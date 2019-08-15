@@ -88,14 +88,14 @@ webpack4、babel7、es6、react16.8、react-router-dom、less、axios、socket.i
 - [未完成] mock.js 模拟后端返回接口
 
 ## 四、截图
-* 登录
-<img src="https://github.com/huangfushan/source/tree/master/react-cli/login.png"  width="973" height="557"/>
+* 登录  
+![image](https://github.com/huangfushan/source/blob/master/react-cli/login.png)
 
-* 首页
-<img src="https://github.com/huangfushan/source/tree/master/react-cli/home.png"  width="973" height="557"/>
+* 首页  
+![image](https://github.com/huangfushan/source/blob/master/react-cli/home.png)
 
-* 群聊通讯
-<img src="https://github.com/huangfushan/source/tree/master/react-cli/chat.png"  width="973" height="557"/>
+* 群聊通讯  
+![image](https://github.com/huangfushan/source/blob/master/react-cli/chat.png)
 
 
 ## 五、布局
