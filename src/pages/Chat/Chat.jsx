@@ -195,7 +195,7 @@ export default class Chat extends Component {
         time: time,
         isSelf: true,
         content: msgNew,
-        src: 'https://dummyimage.com/600x400/000/fff',
+        src: 'https://dummyimage.com/400x400/000/fff',
       };
     }
     // 系统消息
@@ -217,7 +217,7 @@ export default class Chat extends Component {
         time: time,
         isSelf: false,
         content: msgNew,
-        src: 'https://dummyimage.com/600x400/000/fff',
+        src: 'https://dummyimage.com/400x400/000/544',
       };
     }
     recordList.push(obj);

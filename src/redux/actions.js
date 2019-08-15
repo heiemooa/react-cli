@@ -18,7 +18,6 @@ const Actions = createActions({
   auth: {
     updateAuth: auth => ({
       ...auth,
-      username: auth.username || '',
       isAuthenticated: true
     }),
     clearAuth: () => {
