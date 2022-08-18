@@ -8,7 +8,6 @@ import './themes/index.less';
 ReactDOM.render(
   <Provider store={store}>
     <Router />
-  </Provider>
-  ,
+  </Provider>,
   document.getElementById('root')
 );
