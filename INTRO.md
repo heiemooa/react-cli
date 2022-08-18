@@ -1,9 +1,10 @@
 # 优化
 
 ## 一、图片压缩
-* image-webpack-loader 压缩优化
-  * 安装 `npm install image-webpack-loader --save-dev`
-  * 修改 webpack.common.js 文件
+
+- image-webpack-loader 压缩优化
+  - 安装 `npm install image-webpack-loader --save-dev`
+  - 修改 webpack.common.js 文件
   ```
   // webpack.common.js
   {
@@ -35,9 +36,10 @@
         ]
       }
   ```
-* 进一步处理图片打包成 Base64
-  * 安装 `npm install --save-dev url-loader`
-  * 修改 webpack.common.js 文件
+- 进一步处理图片打包成 Base64
+
+  - 安装 `npm install --save-dev url-loader`
+  - 修改 webpack.common.js 文件
 
   ```
     // webpack.common.js
@@ -76,11 +78,13 @@
           ]
         },
   ```
-  
-### 二、css前缀兼容
-PostCSS是一个 CSS 的预处理工具给 CSS3 的属性添加前缀，兼容浏览器
-* 安装 `npm i postcss-loader autoprefixer --save-dev`
-* 修改 webpack.dev.js 文件
+
+### 二、css 前缀兼容
+
+PostCSS 是一个 CSS 的预处理工具给 CSS3 的属性添加前缀，兼容浏览器
+
+- 安装 `npm i postcss-loader autoprefixer --save-dev`
+- 修改 webpack.dev.js 文件
   ```
   {
         test: /\.(c|sc|sa)ss/,
@@ -112,24 +116,27 @@ PostCSS是一个 CSS 的预处理工具给 CSS3 的属性添加前缀，兼容�
   ```
 
 ### 三、热更新/局部热更新
-* react-hot-loader 热加载
-  * 安装 `npm install webpack-dev-server --save-dev`
-  * 修改 webpack.dev.js 文件, 如果 server proxy 单独创建一个文件，如 dev.server.js 文件，那么需要改动这个文件，webpack.dev.js中就不需要定义devServer
+
+- react-hot-loader 热加载
+
+  - 安装 `npm install webpack-dev-server --save-dev`
+  - 修改 webpack.dev.js 文件, 如果 server proxy 单独创建一个文件，如 dev.server.js 文件，那么需要改动这个文件，webpack.dev.js 中就不需要定义 devServer
+
   ```
   // webpack.dev.js
     devServer: {
    +  contentBase: './build'
     },
-  
+
     plugins: [
   +   new webpack.NamedModulesPlugin(), //当开启 HMR 的时候使用该插件会显示模块的相对路径，建议用于开发环境。
   +   new webpack.HotModuleReplacementPlugin()  // 启用模块热替换
     ]
   ```
 
-* react-hot-loader v4 局部热加载
-  * 安装 `npm install react-hot-loader --save-dev`, `npm install @hot-loader/react-dom --save`
-  * 修改文件
+- react-hot-loader v4 局部热加载
+  - 安装 `npm install react-hot-loader --save-dev`, `npm install @hot-loader/react-dom --save`
+  - 修改文件
   ```
     // webpack.common.js
     resolve: {
@@ -149,9 +156,9 @@ PostCSS是一个 CSS 的预处理工具给 CSS3 的属性添加前缀，兼容�
     // App.js
     import React from 'react';
     import { hot } from 'react-hot-loader';
-    
+
     const App = () => <div>Hello world!</div>;
-    
+
     export default hot(module)(App);
   ```
   ```
@@ -159,26 +166,28 @@ PostCSS是一个 CSS 的预处理工具给 CSS3 的属性添加前缀，兼容�
     import React from 'react';
     import ReactDOM from 'react-dom';
     import App from './containers/App';
-      
+
     ReactDOM.render(<App />, document.getElementById('root'));
   ```
-  * 注意：
-     1. 版本 >4.0,  webpack.dev.js 可以不设置 `entry：【"react-hot-loader/patch"]`; .babelrc中也可移除 `"plugins": ["react-hot-loader/babel"]`
-     2. 新版本需要用@hot-loader/react-dom 替换 react-dom，在生产环境能正常编译，不过还不知道是否有影响
+  - 注意：
+    1.  版本 >4.0, webpack.dev.js 可以不设置 `entry：【"react-hot-loader/patch"]`; .babelrc 中也可移除 `"plugins": ["react-hot-loader/babel"]`
+    2.  新版本需要用@hot-loader/react-dom 替换 react-dom，在生产环境能正常编译，不过还不知道是否有影响
 
-### 四、分块打包  
+### 四、分块打包
 
-### 五、proxy映射
-* 定义了 dev.server.js 文件，本地运行 npm start 将运行此文件
-  * package.json 中定义proxy
-  * src/common/config.js中配置，如果package.json中定义了，则以package.json中为准
+### 五、proxy 映射
 
-### 六、eslint语法检测
-* 安装依赖 `npm install eslint babel-eslint eslint-loader eslint-plugin-react --save-dev`
-* 文件
-  * 新建配置文件 .eslintrc
-  * 新建忽略文件 .eslintignore
-  * 修改 webpack.common.js, //这里添加，在打包编译的时候会进行校验
+- 定义了 dev.server.js 文件，本地运行 npm start 将运行此文件
+  - package.json 中定义 proxy
+  - src/common/config.js 中配置，如果 package.json 中定义了，则以 package.json 中为准
+
+### 六、eslint 语法检测
+
+- 安装依赖 `npm install eslint babel-eslint eslint-loader eslint-plugin-react --save-dev`
+- 文件
+  - 新建配置文件 .eslintrc
+  - 新建忽略文件 .eslintignore
+  - 修改 webpack.common.js, //这里添加，在打包编译的时候会进行校验
   ```
   {
           test: /\.(js|jsx)$/,
@@ -194,7 +203,9 @@ PostCSS是一个 CSS 的预处理工具给 CSS3 的属性添加前缀，兼容�
           ]
         }
   ```
-### 七、webpack compiler钩子
-* 添加 npm run build 指令
-  * 定义了 scripts/build.js 文件，依赖compiler钩子回调可以获取webpack编译打包成功与否
-  * 功能待完善，需要添加编译进度，编译完成之后的文件展示等
+
+### 七、webpack compiler 钩子
+
+- 添加 npm run build 指令
+  - 定义了 scripts/build.js 文件，依赖 compiler 钩子回调可以获取 webpack 编译打包成功与否
+  - 功能待完善，需要添加编译进度，编译完成之后的文件展示等
